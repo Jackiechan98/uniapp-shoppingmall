@@ -21,12 +21,12 @@
 		</view>
 		
 		<!---->
-		<view style="margin-top:0upx;">
-			<view style="padding:20upx 20upx 20upx 5upx;border-bottom: 1upx solid #e7e7e7;"class="flex justify-around bg-white" v-for="(p,i) in goodsLists" :key="i" >
+		<view style="margin-top:2upx;">
+			<view style="padding:20upx 20upx 20upx 1upx;border-bottom: 1upx solid #e7e7e7;"class="flex justify-around bg-white" v-for="(p,i) in goodsLists" :key="i" >
 				<view style="width: 300upx;">
-					<image style="width: 300upx;height: 300upx;" :src="p.url"></image>
+					<image style="width: 180upx;height: 240upx;margin-left: 70upx;" :src="p.url"></image>
 				</view>
-				<view style="width: 400upx; margin-top: 35upx;borflex-direction: column; " >
+				<view style="width: 440upx; margin-top: 35upx;borflex-direction: column; " >
 					<view style=" font-size: 110%;">
 						{{p.title}}
 					</view>
@@ -64,7 +64,7 @@
 					var p={
 						id:1,
 						title:'Apple iPhone 11 (128GB) - Purple (SIM-Free)',
-						url:"../../static/icon/71xn9bCRfhL._FMwebp__.webp",
+						url:"../../static/icon/1.png",
 						price:600,
 						
 					}
