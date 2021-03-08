@@ -11,8 +11,9 @@
 				</checkbox-group>
 			</view>
 			<view>
-				<view @tap="deleteAll" class="cu-btn sm round" style="color: #747373;">Delete</view>
+				<view @tap="deleteAll" class="cu-btn sm round" style="color: #747373;margin-left: 400upx;">Delete</view>
 			</view>
+			
 		</view>
 		
 		<!--maincart-->
@@ -81,29 +82,6 @@
 				this.lists[index].checked=this.lists[index].checked?false:true;
 				var selected=this.lists.filter(p=>{return !p.checked});
 				selected.length==0?this.checked=true:this.checked=false;
-				// if(this.lists[index].checked==false){
-				// 	this.checked=false
-				// }
-				
-				// var x=0;
-				// for(var n of this.lists){
-				// 	if(n.checked==true){
-				// 		x+=1
-				// 		if(x==this.lists.length){
-				// 			this.checked=true
-				// 		}
-				// 	}
-				// }
-				
-				
-				// for(this.lists[index] of this.lists){
-				// 	if(this.lists[index].checked==true){
-				// 		n++
-				// 		// if(n==this.lists.length){
-				// 		// 	this.checked=true
-				// 		// }
-				// 	}
-				// }
 				
 				
 			},
@@ -132,12 +110,16 @@
 						cancelText:"Cancel",
 						success(res){
 							if(res.confirm){
-								console.log(res)
-								if(res.confirm){
 									its.lists=its.lists.filter(p=>{
 										return p.id!=thisdata.id;
 									})
-								}
+								
+							}
+							else{
+								var thisproduct=its.lists.find(p=>{
+									return p.num==0;
+								})
+								thisproduct.num=1;
 							}
 						}
 					})
@@ -175,14 +157,7 @@
 					price:650,
 					num:1,
 					checked:false
-				},{
-					id:4,
-					img:"../../static/icon/1.png",
-					title:"Apple iPhone XR, 256GB, Black - Fully Unlocked (Renewed)",
-					price:650,
-					num:1,
-					checked:false
-				}];
+				},];
 				this.lists=data
 			},
 		}
@@ -204,12 +179,11 @@
 	position: fixed;
 	background-color: white;
 	display: flex;
-	justify-content: space-between;
 	height: 80upx;
 	align-items: center;
 	width: 750upx;
 	padding-left: 30upx;
-	padding-right: 30upx;
+	padding-right: 0upx;
 	border-bottom: 1upx solid #e7e7e7
 }
 
