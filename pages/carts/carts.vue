@@ -1,5 +1,6 @@
 <template>
 	<view>
+		<view style="position: fixed;top: 0;width: 100%;z-index:9999">
 		<view class="header" style="padding-top: 20upx;padding-bottom: 20upx;">Shopping cart</view>
 		
 		<!--operate-->
@@ -14,6 +15,7 @@
 				<view @tap="deleteAll" class="cu-btn sm round" style="color: #747373;margin-left: 400upx;">Delete</view>
 			</view>
 			
+		</view>
 		</view>
 		
 		<!--maincart-->
@@ -157,7 +159,14 @@
 					price:650,
 					num:1,
 					checked:false
-				},];
+				},{
+					id:2,
+					img:"../../static/icon/2.png",
+					title:"Apple iPhone 8 Plus [64GB, Silver] + Carrier Subscription [Cricket Wireless]",
+					price:700,
+					num:2,
+					checked:false
+				}];
 				this.lists=data
 			},
 		}
@@ -176,7 +185,6 @@
 }
 	
 .operate{
-	position: fixed;
 	background-color: white;
 	display: flex;
 	height: 80upx;
@@ -189,7 +197,7 @@
 
 .total{
 	position: fixed;
-	bottom: 100upx;
+	bottom: 90upx;
 	width: 750upx;
 	height: 100upx;
 	background-color: white;
@@ -198,8 +206,9 @@
 }
 
 .cart-content{
-	margin-top: 80upx;
-	margin-bottom: 200upx;
+	margin-top: 170upx;
+	margin-bottom: 1200upx;
+	height: 0;
 }
 
 .cart-item{
