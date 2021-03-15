@@ -55,7 +55,19 @@
 				}
             }
             
-        }
+        },
+		{
+		    "path" : "pages/gooddetail/gooddetail",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "",
+		        "enablePullDownRefresh": false,
+				"app-plus":{
+					"titleNView":false
+				}
+		    }
+		    
+		}
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

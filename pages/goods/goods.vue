@@ -22,7 +22,7 @@
 				<view :id="'good-'+i" style="border-bottom: 0.5upx #E7E7E7 solid;padding-bottom: 40upx;" v-for="(p,i) in goods" :key="i">
 					<view class="g-title">{{p.brand_name}}</view>
 					<view class="flex flex-wrap">
-						<view class="flex justify-center align-center" style="width: 275upx;margin-top: 10upx;" v-for="(tp,ti) in p.data" :key="ti">
+						<view @tap="gotodetail()" class="flex justify-center align-center" style="width: 275upx;margin-top: 10upx;" v-for="(tp,ti) in p.data" :key="ti">
 							<view>
 							<image style="width: 170upx;height: 220upx;" :src="tp.image"></image>
 							
@@ -50,6 +50,12 @@
 			}
 		},
 		methods: {
+			
+			gotodetail(id) {
+				uni.navigateTo({
+					url:`../gooddetail/gooddetail`//填货物id
+				})
+			},
 
 			getgoods() {
 				uni.request({
@@ -60,6 +66,7 @@
 					success:(res) =>{
 						this.goods=res.data
 					}
+					
 					
 				})
 			},
