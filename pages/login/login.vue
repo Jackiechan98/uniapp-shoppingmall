@@ -1,10 +1,15 @@
 <template>
 	
 	<view class="loginpage bg-white">
+		
+		
 		<!--title-->
-		<view class="title" style="padding-top: 150upx;">
-			<view style="font-size: 170%;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Processed with your</view>
-			<text class="login">Login</text>
+		<view  style="padding-top: 40upx;">
+			<view @tap="gotohome()" style="padding-bottom: 60upx;margin-left: 32upx;"><image src="../../static/icon/back.png" style="width: 70upx;height: 70upx;"></image></view>
+			<view class="title">
+				<view style="font-size: 170%;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Processed with your</view>
+				<text class="login">Login</text>
+			</view>
 		</view>
 		
 		<!--input box-->
@@ -74,7 +79,13 @@
 					}
 				}
 				})
+			},
+			gotohome(){
+				uni.switchTab({
+					url:"../index/index"
+				})
 			}
+			
 		}
 	}
 </script>
